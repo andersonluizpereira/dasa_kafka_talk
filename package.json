@@ -1,0 +1,14 @@
+{
+  "name": "dasa_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "up": "docker-compose down && docker-compose up -d",
+    "simple":"echo off && cd go && go run simple/main.go && cd .. && echo 'tomem cuidado para não serem apenas enviadores de mensagens rs'",
+    "consumer":"cd go && go run cmd/consumer/main.go",
+    "producer":"cd go && go run cmd/producer/main.go"
+  },
+  "author": "",
+  "license": "ISC"
+}
