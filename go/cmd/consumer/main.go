@@ -9,9 +9,11 @@ import (
 func main() {
 	configMap := &kafka.ConfigMap{
 		"bootstrap.servers": "localhost:9092",
-		"client.id":         "dasa-consumer",
+		"client.id":         "dasa-consumer1",
 		"group.id":          "dasa-group",
 		"auto.offset.reset": "earliest",
+		//a mais antiga
+		//latest - a mais recente
 	}
 	c, err := kafka.NewConsumer(configMap)
 	if err != nil {

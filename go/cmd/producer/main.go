@@ -22,6 +22,17 @@ func NewKafkaProducer() *kafka.Producer {
 		"acks":                "all",
 		"enable.idempotence":  "true",
 	}
+
+	//Em Acks=all, o produtor aguarda o retorno até que o líder e todas as réplicas recebam a mensagem.
+	//É o modo mais seguro, mas lembre-se que para funcionar o tópico precisa ter um fator de replicação maior
+	//que 1 e o cluster deve ter mais de 1 broker.
+
+	//Em Acks=1, o produtor aguarda por um ok do líder da partição.
+	//Sendo assim sabemos que ao menos 1 broker recebeu a mensagem.
+
+	//Em Acks=0, o produtor não aguarda nenhum tipo de resposta do cluster.
+	//É o modo com throughput mais elevado. É importante levar em conta que nesse modo a perda de dados é possível uma vez que o produtor não aguarda nenhum tipo de sinal do cluster.
+
 	p, err := kafka.NewProducer(configMap)
 	if err != nil {
 		log.Println(err.Error())
