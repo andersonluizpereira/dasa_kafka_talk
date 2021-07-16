@@ -20,6 +20,7 @@ kafka-topics --bootstrap-server localhost:9092 --describe --topic=teste
 
 #Agora vamos para baguncinhas rs - https://www.youtube.com/watch?v=hxLzOdeNIyg
 #Como alterar as partições de um tópico
+#No mesmo terminal que está aberto acima, execute o comando abaixo
 kafka-topics --bootstrap-server localhost:9092 --alter --topic=teste --partitions=3
 
 #Abra 4 terminais - execute  - docker exec -it dasa_example_kafka_1 bash
