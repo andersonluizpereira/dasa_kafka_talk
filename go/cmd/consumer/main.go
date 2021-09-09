@@ -9,7 +9,7 @@ import (
 func main() {
 	configMap := &kafka.ConfigMap{
 		"bootstrap.servers": "localhost:9092",
-		"client.id":         "dasa-consumer1",
+		"client.id":         "dasa-consumer",
 		"group.id":          "dasa-group",
 		"auto.offset.reset": "earliest",
 		//a mais antiga
